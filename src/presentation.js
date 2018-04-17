@@ -16,6 +16,7 @@ import {
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
+import Slide2 from './slide2';
 
 // Require CSS
 require('normalize.css');
@@ -41,12 +42,14 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
+        <Slide2 />
+      
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Spectacle Boilerplate
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+            open the presentation/index.js file to get started    
           </Text>
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary">

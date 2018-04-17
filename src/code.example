@@ -1,0 +1,12 @@
+const Button = (props: {
+  href?: string | null,
+  palette: string,
+  number: number
+}) => {
+  if (props.href) {
+    const LinkButton = ButtonElement.withComponent('a');
+    return <LinkButton {...props} />;
+  }
+
+  return <ButtonElement {...props} />;
+};
