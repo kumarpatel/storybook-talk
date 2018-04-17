@@ -1,12 +1,18 @@
-const Button = (props: {
-  href?: string | null,
-  palette: string,
-  number: number
-}) => {
-  if (props.href) {
-    const LinkButton = ButtonElement.withComponent('a');
-    return <LinkButton {...props} />;
-  }
-
-  return <ButtonElement {...props} />;
-};
+export default (props: FooterPropTypes) => (
+  <Container>
+    <LogoContainer>
+      <Logo maxHeight="25px" />
+    </LogoContainer>
+    <LinkContainer>
+      {props.links.map((link, key) => (
+        <FooterLink href={link.url} key={key}>
+          {link.title}
+        </FooterLink>
+      ))}
+    </LinkContainer>
+    <BottomBar>
+      <div dangerouslySetInnerHTML={{ __html: `${props.copyright}` }} />
+      <div>{props.disclaimer}</div>
+    </BottomBar>
+  </Container>
+);

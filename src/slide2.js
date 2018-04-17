@@ -38,12 +38,9 @@ export default class Slide2 extends React.Component {
   render() {
     return (
       <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-        <CodePane
-            lang="jsx"
-            source={require('raw-loader!./code.example')} // eslint-disable-line import/no-webpack-loader-syntax
-            margin="20px auto"
-            overflow = "overflow"
-          />
+      <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+            Spectacle Boilerplate
+          </Heading>
       </Slide>
     );
   }
