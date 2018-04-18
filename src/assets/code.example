@@ -1,0 +1,18 @@
+export default (props) => (
+  <Container>
+    <LogoContainer>
+      <Logo maxHeight="25px" />
+    </LogoContainer>
+    <LinkContainer>
+      {props.links.map((link, key) => (
+        <FooterLink href={link.url} key={key}>
+          {link.title}
+        </FooterLink>
+      ))}
+    </LinkContainer>
+    <BottomBar>
+      <div dangerouslySetInnerHTML={{ __html: `${props.copyright}` }} />
+      <div>{props.disclaimer}</div>
+    </BottomBar>
+  </Container>
+);

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://react-live.kitten.sh/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="preload" href="./React Live Demo_files/index.js" as="script"><link rel="preload" href="./React Live Demo_files/_error.js" as="script"><link rel="preload" href="./React Live Demo_files/app.js" as="script"><meta name="viewport" content="width=device-width, initial-scale=1"><title>React Live Demo</title><meta httpequiv="X-UA-Compatible" content="IE=edge,chrome=1"><style>
+*,::after,::before{background-repeat:no-repeat;box-sizing:inherit}::after,::before{text-decoration:inherit;vertical-align:inherit}html{box-sizing:border-box;cursor:default;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}article,aside,footer,header,nav,section{display:block}body{margin:0}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}nav ol,nav ul{list-style:none}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg{fill:currentColor}svg:not(:root){overflow:hidden}table{border-collapse:collapse}button,input,optgroup,select,textarea{margin:0}button,input,select,textarea{background-color:transparent;color:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto;resize:vertical}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[tabindex],a,area,button,input,label,select,summary,textarea{-ms-touch-action:manipulation;touch-action:manipulation}[hidden]{display:none}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-hidden=false][hidden]:not(:focus){clip:rect(0,0,0,0);display:inherit;position:absolute}[aria-disabled]{cursor:default}
+
+
+  @font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(https://fonts.gstatic.com/s/sourcecodepro/v6/mrl8jkM18OlOQN8JLgasD5bPFduIYtoLzwST68uhz_Y.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Montserrat Medium'), local('Montserrat-Medium'), url(https://fonts.gstatic.com/s/montserrat/v10/BYPM-GE291ZjIXBWrtCweteM9fzAXBk846EtUMhet0E.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+
+  html, body {
+    font-size: 16px;
+    line-height: 1.3;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: normal;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+    background: #282a36;
+    color: #f8f8f2;
+  }
+
+  .root {
+    position: relative;
+    overflow: auto;
+    min-height: 100vh;
+    z-index: 0;
+  }
+
+  @media (max-width: 1200px) {
+    html, body {
+      font-size: 14px;
+    }
+  }
+
+
+.prism-code {
+  display: block;
+  white-space: pre;
+
+  background-color: #1D1F21;
+  color: #C5C8C6;
+
+  padding: 0.5rem;
+  margin: 0;
+
+  box-sizing: border-box;
+  vertical-align: baseline;
+  outline: none;
+  text-shadow: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  word-wrap: normal;
+  word-break: normal;
+  text-align: left;
+  word-spacing: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: hsl(30, 20%, 50%);
+}
+
+.token.punctuation {
+  opacity: .7;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: hsl(350, 40%, 70%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: hsl(75, 70%, 60%);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: hsl(40, 90%, 60%);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: hsl(350, 40%, 70%);
+}
+
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: red;
+}
+</style><style type="text/css" data-styled-components="kluAJf fQpEWK jJgtQt hbpYZ fqkOgy hvpUZV gStGcW loeif fzOdHR ODtpW jIoBFg kdRfzc jOfSKO hPqjcO" data-styled-components-is-local="true">/* sc-component-id: Header__Image-s1wewkt7-0 */
+
+.hbpYZ{background-image:url(https://raw.githubusercontent.com/philpl/react-live/master/docs/logo.gif);background-size:cover;background-position:center;width:10rem;height:10rem;border-radius:0.1875rem;}
+/* sc-component-id: Header__SubTitle-s1wewkt7-1 */
+
+.hvpUZV{font-size:1.333em;font-weight:bold;color:#828fb7;margin:0;margin-left:1.875rem;-webkit-letter-spacing:0.01875rem;-moz-letter-spacing:0.01875rem;-ms-letter-spacing:0.01875rem;letter-spacing:0.01875rem;line-height:1.5;}
+@media (max-width:600px){.hvpUZV{margin-left:0;margin-top:1.875rem;}}
+/* sc-component-id: Header__Title-s1wewkt7-2 */
+
+.fqkOgy{font-weight:normal;font-size:5.332em;line-height:1.1;margin:0;margin-left:1.5625rem;}
+@media (max-width:600px){.fqkOgy{margin-left:0;margin-top:1.5625rem;margin-top:1.5625rem;}}
+/* sc-component-id: Header__TitleRow-s1wewkt7-3 */
+
+.jJgtQt{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;text-align:left;margin:1.875rem 0;}
+@media (max-width:600px){.jJgtQt{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;text-align:center;}}
+/* sc-component-id: Header__Description-s1wewkt7-4 */
+
+.gStGcW{margin:5rem;text-align:center;font-size:1.333em;color:#828fb7;line-height:1.5;}
+@media (max-width:600px){.gStGcW{margin:5rem 0;}}
+/* sc-component-id: Header__Button-s1wewkt7-5 */
+
+.loeif{display:inline-block;width:auto;padding:0.625rem 1.25rem;-webkit-text-decoration:none;text-decoration:none;border-radius:0.1875rem;background:#828fb7;color:#f8f8f2;margin:1.875rem 0;}
+/* sc-component-id: Header__Container-s1wewkt7-6 */
+
+.fQpEWK{width:100%;margin-bottom:3.75rem;}
+/* sc-component-id: LiveEdit__StyledProvider-ejm46o-0 */
+
+.ODtpW{border-radius:0.1875rem;box-shadow:1px 1px 20px rgba(20,20,20,0.27);overflow:hidden;margin-bottom:6.25rem;}
+/* sc-component-id: LiveEdit__LiveWrapper-ejm46o-1 */
+
+.jIoBFg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:stretch;-webkit-justify-content:stretch;-ms-flex-pack:stretch;justify-content:stretch;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;}
+@media (max-width:600px){.jIoBFg{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}
+/* sc-component-id: LiveEdit__StyledEditor-ejm46o-2 */
+
+.kdRfzc{background:#1d1f27;font-family:'Source Code Pro',monospace;font-size:0.875rem;height:21.875rem;overflow:scroll;-webkit-flex-basis:50%;-ms-flex-preferred-size:50%;flex-basis:50%;width:50%;max-width:50%;}
+@media (max-width:600px){.kdRfzc{-webkit-flex-basis:auto;-ms-flex-preferred-size:auto;flex-basis:auto;width:100%;max-width:100%;}}
+/* sc-component-id: LiveEdit__StyledPreview-ejm46o-3 */
+
+.jOfSKO{position:relative;padding:0.5rem;background:white;color:black;height:auto;overflow:hidden;-webkit-flex-basis:50%;-ms-flex-preferred-size:50%;flex-basis:50%;width:50%;max-width:50%;}
+@media (max-width:600px){.jOfSKO{-webkit-flex-basis:auto;-ms-flex-preferred-size:auto;flex-basis:auto;width:100%;max-width:100%;}}
+/* sc-component-id: LiveEdit__StyledError-ejm46o-4 */
+
+.hPqjcO{display:block;padding:0.5rem;background:#ff5555;color:#f8f8f2;}
+/* sc-component-id: pages__Container-s1rqjo51-0 */
+
+.kluAJf{margin:0 auto;max-width:100%;width:64rem;padding:1.25rem;padding-bottom:6.25rem;text-align:center;}
+/* sc-component-id: pages__Description-s1rqjo51-1 */
+
+.fzOdHR{color:white;margin-bottom:0.625rem;margin-top:3.125rem;}
+</style><link type="text/css" rel="stylesheet" href="chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content.css"></head><body><div class="root"><div><div id="__next"><div class="pages__Container-s1rqjo51-0 kluAJf"><div class="Header__Container-s1wewkt7-6 fQpEWK"><div class="Header__TitleRow-s1wewkt7-3 jJgtQt"><div class="Header__Image-s1wewkt7-0 hbpYZ"></div><div><h1 class="Header__Title-s1wewkt7-2 fqkOgy">React Live</h1><h2 class="Header__SubTitle-s1wewkt7-1 hvpUZV">A production-focused playground for live editing React code  📡</h2></div></div><div class="Header__Description-s1wewkt7-4 gStGcW"><div>Easily render live editable React components with server-side rendering support and a tiny bundle size, thanks to Bublé and a Prism.js-based editor.</div><a href="https://github.com/philpl/react-live" target="_blank" rel="noopener" class="Header__Button-s1wewkt7-5 loeif">GitHub</a></div></div><p class="pages__Description-s1rqjo51-1 fzOdHR">Write some component classes...</p><div class="react-live LiveEdit__StyledProvider-ejm46o-0 ODtpW"><div class="LiveEdit__LiveWrapper-ejm46o-1 jIoBFg"><pre class="prism-code LiveEdit__StyledEditor-ejm46o-2 kdRfzc" spellcheck="false" contenteditable="true" style=""><span class="token keyword">class</span> <span class="token class-name">Counter</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> count<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>interval <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span>state <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> count<span class="token punctuation">:</span> state<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">componentWillUnmount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">clearInterval</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>interval<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>center</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>
+          <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>center</span><span class="token punctuation">&gt;</span></span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre><div class="react-live-preview LiveEdit__StyledPreview-ejm46o-3 jOfSKO"><center><h3>32</h3></center></div></div></div><p class="pages__Description-s1rqjo51-1 fzOdHR">Or some pure functional components...</p><div class="react-live LiveEdit__StyledProvider-ejm46o-0 ODtpW"><div class="LiveEdit__LiveWrapper-ejm46o-1 jIoBFg"><pre class="prism-code LiveEdit__StyledEditor-ejm46o-2 kdRfzc" spellcheck="false" contenteditable="true" style=""><pre class="prism-code language-jsx builtin-prism-theme css-tlceus e1u9oini2" spellcheck="false" style="direction: ltr; line-height: 1.5; overflow: auto; background: rgb(250, 248, 245); min-height: 100%;"><font color="#728fcb" face="monospace"><span style="font-size: 24px; white-space: pre-wrap;">const buttonStyles = {
+  border: '1px solid red',
+  borderRadius: 3,
+  backgroundColor: 'red',
+  fontSize: 15
+};
+
+class Button extends React.Component {
+  render() {
+    return (
+      &lt;button type="button" style={buttonStyles} onClick={this.onClick}&gt;
+        {this.props.label}
+      &lt;/button&gt;
+    );
+  }
+}
+
+// Usage example
+&lt;Button onClick={() =&gt; alert("button clicked")} /&gt;
+</span></font><span style="color: rgb(114, 143, 203); font-family: monospace; font-size: 24px; white-space: pre-wrap; word-spacing: 0px;">
+</span></pre></pre><div class="react-live-preview LiveEdit__StyledPreview-ejm46o-3 jOfSKO"><h3>So functional. Much wow!</h3></div></div></div><p class="pages__Description-s1rqjo51-1 fzOdHR">Or just some JSX code!</p><div class="react-live LiveEdit__StyledProvider-ejm46o-0 ODtpW"><div class="LiveEdit__LiveWrapper-ejm46o-1 jIoBFg"><pre class="prism-code LiveEdit__StyledEditor-ejm46o-2 kdRfzc" spellcheck="false" contenteditable="true" style=""><font color="#d1949e">const buttonStyles = {
+  border: '1px solid red',
+  borderRadius: 3,
+  backgroundColor: 'red',
+  fontSize: 15
+};
+
+class Button extends React.Component {
+  render() {
+    return (
+      &lt;button type="button" style={buttonStyles} onClick={this.onClick}&gt;
+        {this.props.label}
+      &lt;/button&gt;
+    );
+  }
+}
+
+// Usage example
+&lt;Button onClick={() =&gt; alert("button clicked")} /&gt;
+</font>
+</pre><div class="react-live-preview LiveEdit__StyledPreview-ejm46o-3 jOfSKO"><h3>Hello World!</h3></div></div></div><p class="pages__Description-s1rqjo51-1 fzOdHR">If you want to demo a couple of components in tandem, without evaluating a single one inline, you can use the "noInline" prop and call "render".</p><div class="react-live LiveEdit__StyledProvider-ejm46o-0 ODtpW"><div class="LiveEdit__LiveWrapper-ejm46o-1 jIoBFg"><pre class="prism-code LiveEdit__StyledEditor-ejm46o-2 kdRfzc" spellcheck="false" contenteditable="true" style=""><span class="token keyword">const</span> buttonStyles <span class="token operator">=</span> <span class="token punctuation">{</span>
+  border<span class="token punctuation">:</span> <span class="token string">'1px solid red'</span><span class="token punctuation">,</span>
+  borderRadius<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  backgroundColor<span class="token punctuation">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span>
+  fontSize<span class="token punctuation">:</span> <span class="token number">15</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Button</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span>buttonStyles<span class="token punctuation">}</span></span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>onClick<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>label<span class="token punctuation">}</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Usage example</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"button clicked"</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>
+
+</pre><div class="react-live-preview LiveEdit__StyledPreview-ejm46o-3 jOfSKO"></div></div></div></div></div><div id="__next-error"></div></div></div><div><script>
+          __NEXT_DATA__ = {"props":{},"pathname":"/","buildId":"7ab7bac8-0cc9-49c1-8cb4-667690e767c0","buildStats":{"app.js":{"hash":"a4ea2bfeae804d4097519da7b9650403"}},"assetPrefix":"","nextExport":false,"err":null,"chunks":[]}
+          module={}
+          __NEXT_LOADED_PAGES__ = []
+          __NEXT_LOADED_CHUNKS__ = []
+
+          __NEXT_REGISTER_PAGE = function (route, fn) {
+            __NEXT_LOADED_PAGES__.push({ route: route, fn: fn })
+          }
+
+          __NEXT_REGISTER_CHUNK = function (chunkName, fn) {
+            __NEXT_LOADED_CHUNKS__.push({ chunkName: chunkName, fn: fn })
+          }
+        </script><script async="" id="__NEXT_PAGE__/" type="text/javascript" src="./React Live Demo_files/index.js"></script><script async="" id="__NEXT_PAGE__/_error" type="text/javascript" src="./React Live Demo_files/_error.js"></script><div></div><script type="text/javascript" src="./React Live Demo_files/app.js" async=""></script></div><script id="wappalyzer" src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/inject.js"></script></body></html>

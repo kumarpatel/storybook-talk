@@ -1,0 +1,20 @@
+const buttonStyles = {
+  backgroundColor: 'green',
+  width: 150,
+  height: 40,
+};
+
+class Button extends React.Component {
+  render() {
+    return (
+      <button style={buttonStyles} onClick={this.onClick}>
+        {this.props.label}
+      </button>
+    );
+  }
+}
+
+// Usage example
+render(
+  <Button label="Button Component" onClick={() => alert("button clicked")} />
+)
