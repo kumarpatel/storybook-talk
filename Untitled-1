@@ -1,0 +1,28 @@
+Storybook introduction
+- Goal
+    - What is Storybook?
+    - Why use it?
+    - How to get started?
+    - Alternatives
+    - How does it help with Mobile development?
+    - Demo
+
+Assumptions
+    - Some knowledge of React would be nice
+    (will be using React to demo everything)
+
+What is Storybook?
+    - Interactive Styleguide
+    (GIF of interactive styleguide without any addons)
+        - 
+    - Generated docs
+    (GIF of info plugin in action)
+        - 
+    - Snapshot test
+
+Why use Storybook?
+    - 
+    (Everything Storybook does can be accomplished by other tools)
+    - 
+
+

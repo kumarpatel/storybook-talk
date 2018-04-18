@@ -1,4 +1,4 @@
-export default (props: FooterPropTypes) => (
+export default (props) => (
   <Container>
     <LogoContainer>
       <Logo maxHeight="25px" />
