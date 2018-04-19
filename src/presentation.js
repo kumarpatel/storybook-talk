@@ -27,6 +27,9 @@ import CodeSlide from "spectacle-code-slide";
 import createTheme from "spectacle/lib/themes/default";
 import code from "./assets/code.example";
 import buttonComponent from "./assets/button-component.example";
+import buttonStory from "./assets/button-storybook.example";
+import buttonStoryDemoGif from "./assets/button-storybook-demo.gif";
+import storybookInstallation from "./assets/storybook-installation.example";
 import storybookLogo from "./assets/storybook-logo.svg";
 import slide1Gif from "./assets/slide1.gif";
 import styleGuidist from "./assets/style-guidist.gif";
@@ -122,8 +125,130 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="secondary">
+        <CodeSlide
+          bgColor="secondary"
+          textColor="primary"
+          transition={["fade"]}
+          lang="js"
+          textSize=".6em"
+          code={storybookInstallation}
+          ranges={[
+            { loc: [0, 5], title: "Storybook integration" },
+            {
+              loc: [0, 1],
+              title: "Global install CLI tool",
+              notes: "Installed Storybook CLI tool"
+            },
+            {
+              loc: [2, 3],
+              title: "Execute from your project dir",
+              notes:
+                "This will add all required depencencies & files to integrate Storybook into your project"
+            }
+          ]}
+        />
 
+        <CodeSlide
+          bgColor="secondary"
+          textColor="primary"
+          transition={["fade"]}
+          lang="jsx"
+          textSize=".6em"
+          code={buttonStory}
+          ranges={[
+            {
+              loc: [8, 25],
+              title: "Our first Story",
+              notes: "This example is written in gatsby-wordpress project"
+            },
+            {
+              loc: [2, 5],
+              title: "Storybook imports",
+              notes: ""
+            },
+            {
+              loc: [0, 1],
+              title: "¯\\_(ツ)_/¯",
+              notes: "Gotta import react"
+            },
+            {
+              loc: [8, 9],
+              title: "Give your story a name",
+              notes: ""
+            },
+            {
+              loc: [9, 10],
+              title: "First story",
+              notes: ""
+            },
+            {
+              loc: [11, 14],
+              title: "Themed button",
+              notes: ""
+            },
+            {
+              loc: [15, 24],
+              title: "with lenghty text & href link",
+              notes: ""
+            },
+            {
+              loc: [8, 25],
+              image: buttonStoryDemoGif,
+              notes: ""
+            }
+          ]}
+        />
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={6} textColor="primary" caps>
+            Why use Storybook?
+          </Heading>
+          <Appear
+            startValue={{ opacity: 0.1 }}
+            endValue={{ opacity: 1 }}
+            transitionDuration={1000}
+          >
+            <List>
+              <ListItem>Develop components in isolation</ListItem>
+              <ListItem>Improved Designer-Developer collaboration</ListItem>
+              <ListItem>Onboarding new team members</ListItem>
+              <ListItem>Addon: Storyshots</ListItem>
+            </List>
+          </Appear>
+
+          <Notes>
+            <li>Why use Storybook?</li>
+            <ul>
+              <li>Developing components in isolation</li>
+              <li>Or a set of components that form a meaningful peice of functionality. Example: signup form or pagination component</li>
+              <li>Storyshots autogenerates jest snapshot test for your stories. One less thing to do.</li>
+            </ul>
+          </Notes>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={6} textColor="primary">
+            What is Storybook?
+          </Heading>
+          <Image src={slide1Gif} />
+
+          <Notes>
+            <li>Interactive styleguide</li>
+            <li>What is a styleguide?!?!</li>
+            <li>It's a way to easily understand your apps building blocks</li>
+            <li>
+              For example: A HeaderComponent, FooterComponent, CardComponents,
+              Button, etc
+            </li>
+            <li>
+              In this example, you see a Button component being represented in
+              different scenarios
+            </li>
+            <li>One with text</li>
+            <li>The other with emojis</li>
+          </Notes>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary">
           <Heading size={6} textColor="primary">
             Very similar to React Styleguidist
           </Heading>
@@ -145,21 +270,6 @@ export default class Presentation extends React.Component {
             <li>The other with emojis</li>
           </Notes>
         </Slide>
-
-        <CodeSlide
-          bgColor="secondary"
-          textColor="primary"
-          transition={["fade"]}
-          lang="jsx"
-          textSize=".6em"
-          code={buttonComponent}
-          ranges={[
-            { loc: [0, 16], title: "React Component Example" },
-            { loc: [6, 16], title: "Button component" },
-            { loc: [0, 6], title: "Styles used by this Button" },
-            { loc: [16, 21], title: "Can be used anywhere" }
-          ]}
-        />
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Layout>

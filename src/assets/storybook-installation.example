@@ -1,0 +1,3 @@
+yarn global add @storybook/cli # npm i -g @storybook/cli
+
+getstorybook

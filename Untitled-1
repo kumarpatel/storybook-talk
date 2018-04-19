@@ -15,29 +15,37 @@ What is Storybook?
     (GIF of interactive styleguide without any addons)
     - Interactive Styleguide
     - What is a styleguide?!?!
-    - It's a way easily understand your apps building blocks
+    - In the case of Storybook, it's a way to easily understand your apps building blocks
     - In this example, you see a Button component being represented in different scenarios
     - One with text
     - The other with emojis
 
-Example
+Getting started with Storybook
     (button component code walkthrough)
+    (Button Story creation code walkthrough)
     
 
-Why do we care about style guides?
-    (There's many reasons why you'd want to use styleguides)
-    - 
-    - Storybook
-    - 
-    
 Why use Storybook?
     - NOTES:
+        - There's many reasons to use Storybooks
+        - Develop components in isolation
+        - Or a set of components that form a meaningful peice of functionality. Example: signup form
         - Cool plugins!
-        
+    
+    - Develop components in isolation
     - Generated docs
-    (GIF of info plugin in action)
+        - (GIF of info plugin in action)
         - 
     - Snapshot test
+        - (GIF of info plugin in action)
+
     - 
     (Everything Storybook does can be accomplished by other tools)
-    - 
+    Storybook just happens to pack a lot of it.
+
+
+
+
+Examples: 
+    - https://opensource.appbase.io/playground/
+

@@ -1,0 +1,24 @@
+import React from 'react';
+
+import { palette } from 'styled-theme';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+
+import Button from './Button';
+
+storiesOf('Button', module)
+  .add('with no props', () => <Button>I am a button</Button>)
+
+  .add('with secondary palette', () => (
+    <Button palette="secondary">Themed Button</Button>
+  ))
+
+  .add('with long text text', () => (
+    <Button onClick={action('clicked')}>
+      Lorem Ipsum is simply dummy text of the printing and typesetting...
+    </Button>
+  ))
+
+  .add('with href link', () => (
+    <Button href="https://google.com">Links to Google</Button>
+  ));
